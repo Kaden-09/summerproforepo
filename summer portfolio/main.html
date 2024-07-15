@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaden's Proffesional Portfolio</title>
     <link rel="stylesheet" href="style.css"> 
@@ -21,7 +22,7 @@
      </nav>
      <div class="header-text"></div>
      <p>UI/UX Designer</p>
-     <h1>Hi, I'm Kaden Whitley from The United States</h1>
+     <h1>Hi, I'm <spam>Kaden</spam><br> Whitley from The United States</h1>
     </div>
    </div>
  
@@ -29,7 +30,7 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="images/selfie01.jpg">
+                <img src="images/selfie04.jpg">
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
@@ -37,15 +38,29 @@
                     Im a fast learner and a good listener.
                 </p>
                 <div class="tab-titles">
-                    <p class="tab-links">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
-                </div>
-                <div class="tab-contents">
+                    <p class="tab-links acive-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links"onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links"onclick="opentab('education')">Education</p>
+                </div>     
+                <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>Athletic</span><br>multi sports athlete </li>
+                    <li><span>Academic smarts</span><br>maintaining a 4.0 </li>
+                    <li><span>Leader</span><br>Captain and helps in the classroom</li>
+                </ul>
+            </div> 
+                <div class="tab-contents" id="experience">
                     <ul>
-                        <li><span>UI/UX</span><br>Designing Web/App interfaces </li>
-                        <li><span>Web Development<span><br>Web app Development </li>
-                        <li><span>App Development</span><br>Building Android/iOS apps</li>
+                        <li><span>highschool</span><br>Basketball & baseball for salesian </li>
+                        <li><span>middle school</span><br>Basketball & football </li>
+                        <li><span>elemantery</span><br>Basketball & baseball</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2023-now</span><br>highschool </li>
+                        <li><span>2020-2023</span><br>middleschool </li>
+                        <li><span>2013-2020</span><br>elemantery</li>
                     </ul>
                 </div>
             </div>
@@ -53,6 +68,20 @@
     </div>
    </div>
 
+<script>
+
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+function opentab(tabname){
+    for (tablinks of tablinks){
+        tablink.classList.remove("active-link")
+    }
+    for (tablcontent of tabcontents){
+        tabcontent.classList.remove("active-tab")
+    }
+}
+
+</script>
 
 </body>
 </html> 
