@@ -21,7 +21,7 @@
         </ul>
      </nav>
      <div class="header-text"></div>
-     <p>UI/UX Designer</p>
+     <p>Student Athlete</p>
      <h1>Hi, I'm <spam>Kaden</spam><br> Whitley from The United States</h1>
     </div>
    </div>
@@ -68,17 +68,33 @@
     </div>
    </div>
 
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="service-list"></div>
+    <div>
+        <h2>tutoring</h2>
+        <p> </p>
+    </div>
+
+    </div>
+</div>
+
 <script>
 
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
+
 function opentab(tabname){
-    for (tablinks of tablinks){
-        tablink.classList.remove("active-link")
+    for (tablink of tablinks){
+        tablink.classList.remove("active-link");
     }
-    for (tablcontent of tabcontents){
-        tabcontent.classList.remove("active-tab")
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
     }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
 }
 
 </script>
