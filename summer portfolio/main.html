@@ -143,15 +143,16 @@
                 <div class="social-icons">
                     <a href="https://www.instagram.com/kwhit_sports/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
-                <a href= "images/team picture.jpg" download class="btn btn2">Download TP</a>
+                <a href= "link/https://docs.google.com/document/d/1CTUbKca2Ue_NubkHusEBbkmTxCbVAUGRSQ-XEbst7Ks/edit" download class="btn btn2">Athletic History</a>
             </div>
             <div class="contact-right">
-                <form >
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="10" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
     </div>
@@ -178,6 +179,23 @@ function opentab(tabname){
 }
 
 </script>
-
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwKmBMLc7IW6QSRF4W9OD5f_60ICbeoghPl1DcbHXhIe1GvIPTXu-sC5RYMLF2qWRtg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
 </html> 
